@@ -1,0 +1,93 @@
+function(c,a)//t:#s.
+{
+	var i = 0
+	var ez = ["unlock","open","release"]
+	var cw = ["red","orange","yellow","lime","green","cyan","blue","purple","red","orange","yellow","lime","green"]
+	var gl = {secret:7,special:38,meaning:42,secure:443,beast:666,magic:1089,elite:1337,monolith:2001,hunter:3006}
+	var lk = ["ez_21","ez_35","ez_40","c001","c002","c003","CON_SPEC","magnara","sn_w_glock","acct_nt"]
+	var pr = [2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97]
+	var len = ("!LOCK_UNLOCKED " + lk[i]).length;
+	var ret = ""
+	var succ = false;
+	
+	while(1){
+		switch(i){
+			case 0:
+				for(var k=0; k<2; k++){
+					ret = a.t.call({ez_21:ez[k]})
+						
+					if(ret.substr(0, len) == ("!LOCK_UNLOCKED " + lk[i])){
+						succ = true
+						break
+					}
+				}
+				break
+			case 1:
+				for(var k=0; k<2; k++){
+					for(var j=0; j<10; j++){
+						ret = a.t.call({ez_35:ez[k], digit:j})
+						
+						if(ret.substr(0, len) == ("!LOCK_UNLOCKED " + lk[i])){
+							succ = true
+							break
+						}
+					}
+				}
+				break
+			case 2:
+				for(var k=0; k<2; k++){
+					for(var j=0; j<25; j++){
+						ret = a.t.call({ez_40:ez[k], ez_prime:pr[j]})
+						
+						if(ret.substr(0, len) == ("!LOCK_UNLOCKED " + lk[i])){
+							succ = true
+							break
+						}
+					}
+				}
+				break
+			case 3:
+				for(var k=0; k<8; k++){
+					var col = cw[k]
+					var cl = cw[k].length
+					ret = a.t.call({c001:col, color_digit:cl})
+						
+					if(ret.substr(0, len) == ("!LOCK_UNLOCKED " + lk[i])){
+						succ = true
+						break
+					}
+				}
+				break
+			case 4:
+				for(var k=0; k<8; k++){
+					var col = cw[k]
+					var com = cw[k+4]
+					ret = a.t.call({c002:col, c002_complement:com})
+						
+					if(ret.substr(0, len) == ("!LOCK_UNLOCKED " + lk[i])){
+						succ = true
+						break
+					}
+				}
+				break
+			case 5:
+				for(var k=0; k<8; k++){
+					var col = cw[k]
+					var ct1 = cw[k+3]
+					var ct2 = cw[k+5]
+					ret = a.t.call({c002:col, c003_triad_1:ct1, c003_triad_2:ct2})
+						
+					if(ret.substr(0, len) == ("!LOCK_UNLOCKED " + lk[i])){
+						succ = true
+						break
+					}
+				}
+				break
+			case 6:
+				a.t.call({CON_SPEC:#s.user.conspec})
+				break
+		}
+
+	}
+	return {ok:succ, msg:ret}
+}
